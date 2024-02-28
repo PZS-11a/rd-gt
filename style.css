@@ -4,7 +4,8 @@
 body {
   margin: 0px;
   padding-top: 60px;
-  background-color: rgb(43, 26, 19);
+  background-color: black;
+  color: white;
 }
 
 nav {
