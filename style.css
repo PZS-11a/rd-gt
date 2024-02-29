@@ -1,25 +1,35 @@
+body {
+  background-color: black;
+  color: #fff;
+}
 :root {
   --menu-display: flex;
-}
-body {
-  margin: 0px;
-  padding-top: 60px;
-  background-color: black;
-  color: white;
+  --top-menu-height: 60px;
+  --bottom-menu-button-height: 40px;
 }
 
+html {
+  padding-top: var(--top-menu-height);
+}
+
+#menuCheckBox,
+#menuLabel {
+  display: none;
+}
 nav {
-  background-color: black;
-  padding: 5px, 10px;
+  background-color: rgb(0, 0, 0);
   text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  display: flex;
+
+  height: var(--top-menu-height);
+
+  display: var(--menu-display);
   align-items: center;
   justify-content: center;
-  display: var(--menu-display);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 nav a {
@@ -28,20 +38,20 @@ nav a {
   font-size: 26px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: 1px;
-  padding: 5px 10px;
+  padding: 2px 10px;
 }
 
 nav a:hover {
   background-color: grey;
 }
 
-#menulabel {
+#menuLabel {
   cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
   :root {
-    --menu-display: none;
+    --bottom-menu-bottom: -45px;
   }
   nav a {
     font-size: 22px;
@@ -49,30 +59,29 @@ nav a:hover {
   nav {
     flex-direction: column;
     height: auto;
-    bottom: 0;
+    bottom: var(--bottom-menu-bottom);
     top: auto;
+    transition: bottom 0.3s ease;
   }
-  body {
+  html {
     padding-top: 0px;
+    padding-bottom: var(--bottom-menu-button-height);
+  }
+  #menuLabel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-size: 30px;
+    height: var(--bottom-menu-button-height);
+    align-items: center;
+    justify-content: center;
   }
 }
 
-body:has(#menu:checked) {
-  --menu-display: flex;
-}
-#menu {
-  display: none;
-}
-
-label {
-  font-size: 30px;
-  color: white;
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 3px solid #000000;
-  box-shadow: 5px 5px black;
-  background-color: rgba(0, 0, 0, 0.454);
+body:has(#menuCheckBox:checked) {
+  --bottom-menu-bottom: 40px;
 }
