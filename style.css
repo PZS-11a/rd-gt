@@ -1,6 +1,12 @@
+@keyframes mymove {
+  20% {
+    font-size: 40px;
+  }
+}
 body {
   background-color: black;
   color: #fff;
+  padding: 3px;
 }
 :root {
   --menu-display: flex;
@@ -15,6 +21,7 @@ html {
 #menuCheckBox,
 #menuLabel {
   display: none;
+  box-shadow: 0 10px 10px 10px #4666ff;
 }
 nav {
   background-color: rgb(0, 0, 0);
@@ -30,11 +37,13 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  box-shadow: 0 1px 1px 1px #4666ff;
 }
 
 nav a {
   color: white;
-  text-decoration: none;
+  /*text-decoration: none;*/
+  text-decoration: underline;
   font-size: 26px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: 1px;
@@ -42,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: grey;
+  animation: mymove 2s ease;
 }
 
 #menuLabel {
@@ -62,6 +71,7 @@ nav a:hover {
     bottom: var(--bottom-menu-bottom);
     top: auto;
     transition: bottom 0.3s ease;
+    box-shadow: 0 8px 8px 8px #4666ff;
   }
   html {
     padding-top: 0px;
@@ -83,5 +93,5 @@ nav a:hover {
 }
 
 body:has(#menuCheckBox:checked) {
-  --bottom-menu-bottom: 40px;
+  --bottom-menu-bottom: 42px;
 }
