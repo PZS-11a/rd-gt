@@ -1,8 +1,11 @@
-console.log("hello");
+console.log('hello')
 
-let tomb = ["alma", "körte", "kutya", "macska"];
-console.log(tomb);
+let gyumolcsok = ['alma', 'körte', 'kutya', 'macska']
 
-let div = document.createElement("div");
-div.innerHTML = "Hello";
-document.body.appendChild(div);
+let container = document.getElementById('container')
+
+for (let i = 0; i < gyumolcsok.length; i++) {
+  let div = document.createElement('div')
+  div.textContent = gyumolcsok[i]
+  container.appendChild(div)
+}
