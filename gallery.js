@@ -1,11 +1,11 @@
-console.log('hello')
+const container = document.querySelector("#container");
+console.log(container);
 
-let gyumolcsok = ['alma', 'körte', 'kutya', 'macska']
+const kepek = ["delfi.png", "kutya.webp", "macsek.jpg"];
 
-let container = document.getElementById('container')
-
-for (let i = 0; i < gyumolcsok.length; i++) {
-  let div = document.createElement('div')
-  div.textContent = gyumolcsok[i]
-  container.appendChild(div)
+for (const kep of kepek) {
+  const img = document.createElement("img");
+  img.src = kep;
+  img.width = "200";
+  container.appendChild(img);
 }
