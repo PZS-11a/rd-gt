@@ -1,0 +1,9 @@
+#BigImage {
+  width: 400px;
+  height: 400px;
+  border: 1px solid #4666ff;
+}
+
+#TargetImg {
+  width: 100%;
+}
